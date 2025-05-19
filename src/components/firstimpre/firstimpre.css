@@ -1,0 +1,7 @@
+.mask-img {
+  mask-image: linear-gradient(to bottom, black 90%, transparent),
+  linear-gradient(to right, transparent, black 20% ),
+  linear-gradient(to left, transparent, black 20% );
+  mask-composite: intersect;
+}
+

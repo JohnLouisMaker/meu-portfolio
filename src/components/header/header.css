@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family:"Raleway";
+    src: url("../../fonts/Raleway-Bold.ttf") format("truetype");
+}
+
+@theme{
+    --font-raleway-bold: "Raleway", sans-serif;
+} 
