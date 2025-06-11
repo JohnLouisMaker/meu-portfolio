@@ -7,11 +7,11 @@ import mySelf from "../assets/Myself.png";
 import "./Home.css";
 
 const card =
-  "bg-gray-900 py-8 px-6 rounded-xl shadow-lg w-35 h-50 sm:w-40 sm:h-60 md:w-50 md:h-75 lg:w-50 h-44 flex flex-col items-center justify-center text-center transform transition-all duration-700 opacity-0 translate-y-10 animate-slide-up";
+  "bg-gray-900 py-8 px-6 rounded-xl shadow-lg w-35 h-50 sm:w-40 sm:h-60 md:w-50 md:h-75 lg:w-50 h-44 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 opacity-0 translate-y-10 animate-slide-up";
 
 
 const projectCard =
-  "bg-gray-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 opacity-0 translate-y-10 animate-slide-up ";
+  "bg-gray-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200 opacity-0 translate-y-10 animate-slide-up ";
 
 export default function Home() {
   return (
