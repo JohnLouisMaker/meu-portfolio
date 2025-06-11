@@ -1,7 +1,7 @@
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaHtml5, FaCss3Alt } from "react-icons/fa";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 import mySelf from "../assets/Myself.png";
 
 import "./Home.css";
