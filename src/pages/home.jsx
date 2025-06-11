@@ -26,7 +26,7 @@ export default function Home() {
         <img
           src={mySelf}
           alt=""
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-11/12 max-w-sm mask-img lg:max-w-lg lg:-translate-y-10/12"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-11/12 max-w-sm mask-img lg:max-w-lg lg:-translate-y-10/12 transition-transform duration-300 opacity-0  animate-slide-up"
         />
       </section>
 
