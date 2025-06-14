@@ -9,7 +9,6 @@ import Footer from "../components/footer/footer";
 const card =
   "bg-zinc-900 py-8 px-6 rounded-xl shadow-lg w-64 sm:w-40 md:w-48 lg:w-52 h-52 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 opacity-0 translate-y-10 animate-slide-up";
 
-
 const projectCard =
   "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200 opacity-0 translate-y-10 animate-slide-up ";
 
@@ -19,17 +18,17 @@ export default function Home() {
       <Header />
 
       {/* First Impressions Section */}
-      <section className="relative text-center lg:pt-40">
-        <h1 className="relative z-10 font-raleway-bold  text-white text-4xl sm:text-5xl md:text-5xl lg:text-7xl">
-          Olá, eu sou João Luis!
-        </h1>
-        <img
-          src={mySelf}
-          alt=""
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-11/12
-           mask-img lg:max-w-lg lg:-translate-y-10/12 transition-transform duration-300 opacity-0  animate-slide-up"
-        />
-      </section>
+     <section className="relative text-center pt-13 lg:pt-26 sm:pt-26 md:pt-26 xl:pt-26">
+  <h1 className="relative z-10 font-raleway-bold text-white text-3xl sm:text-5xl md:text-5xl lg:text-7xl">
+    Olá, eu sou João Luis!
+  </h1>
+  <img
+    src={mySelf}
+    alt=""
+    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[85%] w-[90vw] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mask-img transition-transform duration-300 opacity-0 animate-slide-up"
+  />
+</section>
+
 
       {/* About Me Section */}
       <section className="my-15">
@@ -60,8 +59,7 @@ export default function Home() {
           Habilidades
         </h2>
 
-       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8">
-
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8">
           <div className={card}>
             <FaHtml5 className="w-20 h-24 mb-4 md:mb-8 lg:mb-12 text-orange-400" />
             <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
