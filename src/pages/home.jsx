@@ -1,16 +1,17 @@
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import mySelf from "../assets/Myself.png";
+import TaskZenBanner from "../assets/taskzen.png";
+import PDFSimples from "../assets/pdf-site.png";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
-import mySelf from "../assets/Myself.png";
-
 
 const card =
-  "bg-gray-900 py-8 px-6 rounded-xl shadow-lg w-35 h-50 sm:w-40 sm:h-60 md:w-50 md:h-75 lg:w-50 h-44 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 opacity-0 translate-y-10 animate-slide-up";
+  "bg-zinc-900 py-8 px-6 rounded-xl shadow-lg w-64 sm:w-40 md:w-48 lg:w-52 h-52 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 opacity-0 translate-y-10 animate-slide-up";
 
 
 const projectCard =
-  "bg-gray-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200 opacity-0 translate-y-10 animate-slide-up ";
+  "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200 opacity-0 translate-y-10 animate-slide-up ";
 
 export default function Home() {
   return (
@@ -19,13 +20,14 @@ export default function Home() {
 
       {/* First Impressions Section */}
       <section className="relative text-center lg:pt-40">
-        <h1 className="relative z-10 font-raleway-bold text-white text-4xl sm:text-5xl md:text-5xl lg:text-7xl">
+        <h1 className="relative z-10 font-raleway-bold  text-white text-4xl sm:text-5xl md:text-5xl lg:text-7xl">
           Olá, eu sou João Luis!
         </h1>
         <img
           src={mySelf}
           alt=""
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-11/12 max-w-sm mask-img lg:max-w-lg lg:-translate-y-10/12 transition-transform duration-300 opacity-0  animate-slide-up"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-11/12
+           mask-img lg:max-w-lg lg:-translate-y-10/12 transition-transform duration-300 opacity-0  animate-slide-up"
         />
       </section>
 
@@ -58,7 +60,8 @@ export default function Home() {
           Habilidades
         </h2>
 
-        <div className="flex justify-center gap-2 md:gap-4 lg:gap-8">
+       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8">
+
           <div className={card}>
             <FaHtml5 className="w-20 h-24 mb-4 md:mb-8 lg:mb-12 text-orange-400" />
             <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
@@ -83,6 +86,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
+      {/* Projects Section */}
       <section className="py-7">
         <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 mt-19 text-center">
           Projetos
@@ -91,29 +95,29 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
           <div className={projectCard}>
             <img
-              src={mySelf}
+              src={TaskZenBanner}
               alt="Projeto 1"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">
-              Projeto 1
-            </h3>
+            <h3 className="text-white text-xl font-semibold mb-2">TaskZen</h3>
             <p className="text-gray-300 text-sm">
-              Landing page responsiva para uma agência digital, feita com HTML, CSS e JS.
+              Uma ToDo List com sistema de login e criação de conta, feita com
+              React e JSON Server.
             </p>
           </div>
 
           <div className={projectCard}>
             <img
-              src={mySelf}
+              src={PDFSimples}
               alt="Projeto 2"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
             <h3 className="text-white text-xl font-semibold mb-2">
-              Projeto 2
+              PDF-Simples!
             </h3>
             <p className="text-gray-300 text-sm">
-              Sistema de login com React e JSON Server simulando autenticação.
+              Um site simples para converter alguns arquivos em PDF de forma
+              rápida e prática.
             </p>
           </div>
 
@@ -123,9 +127,7 @@ export default function Home() {
               alt="Projeto 3"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">
-              Projeto 3
-            </h3>
+            <h3 className="text-white text-xl font-semibold mb-2">Projeto 3</h3>
             <p className="text-gray-300 text-sm">
               Quiz interativo em Java sobre temas sociais e cidadania.
             </p>
@@ -137,11 +139,10 @@ export default function Home() {
               alt="Projeto 4"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">
-              Projeto 4
-            </h3>
+            <h3 className="text-white text-xl font-semibold mb-2">Projeto 4</h3>
             <p className="text-gray-300 text-sm">
-              Portfolio pessoal com React Router, estilização moderna e responsiva.
+              Portfolio pessoal com React Router, estilização moderna e
+              responsiva.
             </p>
           </div>
         </div>
