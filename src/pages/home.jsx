@@ -17,43 +17,47 @@ export default function Home() {
     <div className="min-h-screen bg-black">
       <Header />
 
-      {/* First Impressions Section */}
-     <section className="relative text-center pt-13 lg:pt-26 sm:pt-26 md:pt-26 xl:pt-26">
-  <h1 className="relative z-10 font-raleway-bold text-white text-3xl sm:text-5xl md:text-5xl lg:text-7xl">
-    Olá, eu sou João Luis!
-  </h1>
-  <img
-    src={mySelf}
-    alt=""
-    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[85%] w-[90vw] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mask-img transition-transform duration-300 opacity-0 animate-slide-up"
-  />
-</section>
+      <section className="relative text-center pt-13 lg:pt-26 sm:pt-26 md:pt-26 xl:pt-26">
+        <h1 className="relative z-10 font-raleway-bold text-white text-3xl sm:text-5xl md:text-5xl lg:text-7xl">
+          Olá, eu sou João Luis!
+        </h1>
+        <img
+          src={mySelf}
+          alt=""
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[85%] w-[90vw] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mask-img transition-transform duration-300 opacity-0 animate-slide-up"
+        />
+      </section>
 
-
-      {/* About Me Section */}
       <section className="my-15">
         <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 text-center">
           Sobre Mim
         </h2>
 
-        <div className="font-raleway-light text-white pl-15 pr-12 sm:pl-18 sm:pr-30 md:pr-60 md:pl-25 lg:pr-64 lg:pl-37 space-y-1">
+        <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-10 md:px-12 lg:px-15 space-y-4 text-justify text-base sm:text-lg lg:text-xl">
           <p>
             Tenho 18 anos e sou desenvolvedor web com foco em front-end,
             apaixonado por tecnologia e design de interfaces.
           </p>
           <p>
-            Atualmente curso Análise e Desenvolvimento de Sistemas, sempre
-            buscando aprender mais e me superar a cada projeto. Estou em busca
-            de oportunidades que me desafiem e me permitam crescer na área tech.
+            Atualmente curso Análise e Desenvolvimento de Sistemas na
+            Unifametro, sempre buscando aprender mais e me superar a cada
+            projeto. Participei da Geração Tech (Desenvolvimento Web), o que
+            fortaleceu ainda mais minha base na área.
+          </p>
+          <p>
+            Estou em busca de oportunidades que me desafiem e me permitam
+            crescer na área tech.
           </p>
           <p>
             Sou movido a café, boas ideias e vontade de fazer a diferença por
             meio do código.
           </p>
+          <p className="italic text-center">
+            Hobbies: boa música, automobilismo e games.
+          </p>
         </div>
       </section>
 
-      {/* Skills Section */}
       <section className="py-7">
         <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 text-center">
           Habilidades
@@ -83,8 +87,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      {/* Projects Section */}
       <section className="py-7">
         <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 mt-19 text-center">
           Projetos
@@ -97,8 +99,10 @@ export default function Home() {
               alt="Projeto 1"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">TaskZen</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
+              TaskZen
+            </h3>
+            <p className="font-outfit text-gray-300 text-sm">
               Uma ToDo List com sistema de login e criação de conta, feita com
               React e JSON Server.
             </p>
@@ -110,10 +114,10 @@ export default function Home() {
               alt="Projeto 2"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">
+            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
               PDF-Simples!
             </h3>
-            <p className="text-gray-300 text-sm">
+            <p className="font-outfit text-gray-300 text-sm">
               Um site simples para converter alguns arquivos em PDF de forma
               rápida e prática.
             </p>
@@ -125,8 +129,10 @@ export default function Home() {
               alt="Projeto 3"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">Projeto 3</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
+              Projeto 3
+            </h3>
+            <p className="font-outfit text-gray-300 text-sm">
               Quiz interativo em Java sobre temas sociais e cidadania.
             </p>
           </div>
@@ -137,8 +143,10 @@ export default function Home() {
               alt="Projeto 4"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 className="text-white text-xl font-semibold mb-2">Projeto 4</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
+              Projeto 4
+            </h3>
+            <p className="font-outfit text-gray-300 text-sm">
               Portfolio pessoal com React Router, estilização moderna e
               responsiva.
             </p>
