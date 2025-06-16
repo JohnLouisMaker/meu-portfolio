@@ -1,18 +1,60 @@
+import { useState } from "react";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { SiMysql } from "react-icons/si";
+import { FiX } from "react-icons/fi";
+
 import mySelf from "../assets/Myself.png";
 import TaskZenBanner from "../assets/taskzen.png";
 import PDFSimples from "../assets/pdf-site.png";
+
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 
-const card =
-  "bg-zinc-900 py-8 px-6 rounded-xl shadow-lg w-64 sm:w-40 md:w-48 lg:w-52 h-52 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 opacity-0 translate-y-10 animate-slide-up";
-
-const projectCard =
-  "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200 opacity-0 translate-y-10 animate-slide-up ";
-
 export default function Home() {
+  const [openSkill, setOpenSkill] = useState(null);
+
+  const skills = [
+    {
+      id: "html5",
+      Icon: FaHtml5,
+      title: "HTML5",
+      description:
+        "HTML5 é a linguagem principal para criar a estrutura das páginas web, com vários recursos novos e poderosos.",
+      color: "text-orange-400",
+    },
+    {
+      id: "css3",
+      Icon: FaCss3Alt,
+      title: "CSS3",
+      description:
+        "CSS3 é usado para estilizar e deixar o site responsivo, com animações e layouts modernos.",
+      color: "text-blue-600",
+    },
+    {
+      id: "js",
+      Icon: IoLogoJavascript,
+      title: "JavaScript",
+      description:
+        "JavaScript traz interatividade à página, manipulando eventos e dados dinamicamente.",
+      color: "text-yellow-300",
+    },
+    {
+      id: "mysql",
+      Icon: SiMysql,
+      title: "MySQL",
+      description:
+        "MySQL é um banco de dados relacional muito usado para armazenar informações organizadas.",
+      color: "text-blue-700",
+    },
+  ];
+
+  const card =
+    "bg-zinc-900 py-8 px-6 rounded-xl shadow-lg w-64 sm:w-40 md:w-48 lg:w-52 h-52 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 cursor-pointer";
+
+  const projectCard =
+    "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200";
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -23,7 +65,7 @@ export default function Home() {
         </h1>
         <img
           src={mySelf}
-          alt=""
+          alt="Foto de João Luis"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[85%] w-[90vw] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mask-img transition-transform duration-300 opacity-0 animate-slide-up"
         />
       </section>
@@ -64,27 +106,52 @@ export default function Home() {
         </h2>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8">
-          <div className={card}>
-            <FaHtml5 className="w-20 h-24 mb-4 md:mb-8 lg:mb-12 text-orange-400" />
-            <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
-              HTML5
-            </h3>
-          </div>
-
-          <div className={card}>
-            <FaCss3Alt className="w-20 h-24 mb-4 md:mb-8 lg:mb-12 text-blue-600" />
-            <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
-              CSS3
-            </h3>
-          </div>
-
-          <div className={card}>
-            <IoLogoJavascript className="w-20 h-24 mb-4 md:mb-8 lg:mb-12 text-yellow-300" />
-            <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
-              JavaScript
-            </h3>
-          </div>
+          {skills.map(({ Icon, title, id, color }) => (
+            <div
+              key={id}
+              className={card}
+              onClick={() => setOpenSkill(id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") setOpenSkill(id);
+              }}
+            >
+              <Icon className={`w-20 h-24 mb-4 lg:w-25 lg:h-28 ${color}`} />
+              <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
+                {title}
+              </h3>
+            </div>
+          ))}
         </div>
+        {openSkill && (
+          <>
+            <div
+              className="fixed inset-0 bg-black/65 z-50"
+              onClick={() => setOpenSkill(null)}
+            ></div>
+
+            <div className="fixed top-1/2 left-1/2 w-75 p-6 bg-zinc-900 rounded-xl shadow-xl z-60 transform -translate-x-1/2 -translate-y-1/2 text-center text-white sm:w-11/12 sm:max-w-md
+            lg:max-w-2xl">
+              <button
+                onClick={() => setOpenSkill(null)}
+                className="text-white text-3xl mb-4 float-right hover:text-zinc-300"
+                aria-label="Fechar modal"
+              >
+                <FiX />
+              </button>
+
+              {skills
+                .filter((skill) => skill.id === openSkill)
+                .map(({ title, description }) => (
+                  <div key={title}>
+                    <h3 className="text-2xl font-raleway-bold mb-4">{title}</h3>
+                    <p className="font-outfit text-base">{description}</p>
+                  </div>
+                ))}
+            </div>
+          </>
+        )}
       </section>
 
       <section className="py-7">
@@ -96,7 +163,7 @@ export default function Home() {
           <div className={projectCard}>
             <img
               src={TaskZenBanner}
-              alt="Projeto 1"
+              alt="Projeto TaskZen"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
             <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
@@ -111,7 +178,7 @@ export default function Home() {
           <div className={projectCard}>
             <img
               src={PDFSimples}
-              alt="Projeto 2"
+              alt="Projeto PDF-Simples!"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
             <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
@@ -126,7 +193,7 @@ export default function Home() {
           <div className={projectCard}>
             <img
               src={mySelf}
-              alt="Projeto 3"
+              alt="Projeto Quiz"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
             <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
@@ -140,7 +207,7 @@ export default function Home() {
           <div className={projectCard}>
             <img
               src={mySelf}
-              alt="Projeto 4"
+              alt="Projeto Portfolio"
               className="w-full h-40 object-cover rounded-md mb-4"
             />
             <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
@@ -155,6 +222,8 @@ export default function Home() {
       </section>
 
       <Footer />
+
+      {/* Modal / Menu centralizado que abre ao clicar numa habilidade */}
     </div>
   );
 }

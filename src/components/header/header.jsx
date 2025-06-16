@@ -20,10 +20,10 @@ export default function Header() {
             className=" text-blue-800  hover:text-blue-600 active:scale-85
           text-xl sm:text-2xl md:text-3xl lg:text-4xl "
           >
-            <FaLinkedin />
+            <a href="https://www.linkedin.com/in/jo%C3%A3o-luis-75b18a333/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
           </button>
           <button className=" text-blue-800  hover:text-blue-600 active:scale-85 text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
-            <FaGithub />
+            <a href="https://github.com/JohnLouisMaker" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
           </button>
         </div>
       </div>
