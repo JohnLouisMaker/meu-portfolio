@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJava, FaReact } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { FiX } from "react-icons/fi";
 
@@ -19,14 +19,16 @@ export default function Home() {
       id: "html5",
       Icon: FaHtml5,
       title: "HTML5",
+      experience: "Intermediário a Avançado",
       description:
-        "HTML5 é a linguagem principal para criar a estrutura das páginas web, com vários recursos novos e poderosos.",
+        "Tenho domínio sobre a estrutura básica do HTML5, incluindo elementos semânticos como <header>, <main>, <section>, <article> e <footer>. Também sei trabalhar com formulários usando <form>, <input>, <textarea>, <label> e <button>. Entendo bem a hierarquia de tags, uso correto de <div>, <span>, listas (<ul>, <ol>, <li>) e links (<a>). Ainda estou em processo de aprendizado de estruturas como tabelas (<table>, <tr>, <td>), mas me viro bem para montar páginas responsivas e acessíveis com boa organização semântica.",
       color: "text-orange-400",
     },
     {
       id: "css3",
       Icon: FaCss3Alt,
       title: "CSS3",
+      experience: "Intermediário a Avançado",
       description:
         "CSS3 é usado para estilizar e deixar o site responsivo, com animações e layouts modernos.",
       color: "text-blue-600",
@@ -35,25 +37,45 @@ export default function Home() {
       id: "js",
       Icon: IoLogoJavascript,
       title: "JavaScript",
+      experience: "Básico a Intermediário",
       description:
         "JavaScript traz interatividade à página, manipulando eventos e dados dinamicamente.",
       color: "text-yellow-300",
     },
     {
+      id: "react",
+      Icon: FaReact,
+      title: "React",
+      experience: "Intermediário",
+      description:
+        "React é uma biblioteca JavaScript para construir interfaces de usuário de forma eficiente e reativa.",
+      color: "text-cyan-400",
+    },
+    {
+      id: "java",
+      Icon: FaJava,
+      title: "Java",
+      experience: "Básico",
+      description:
+        "Java é uma linguagem de programação amplamente utilizada, conhecida por sua portabilidade e robustez.",
+      color: "text-red-600",
+    },
+    {
       id: "mysql",
       Icon: SiMysql,
       title: "MySQL",
+      experience: "Básico",
       description:
         "MySQL é um banco de dados relacional muito usado para armazenar informações organizadas.",
-      color: "text-blue-700",
+      color: "text-blue-500",
     },
   ];
 
   const card =
-    "bg-zinc-900 py-8 px-6 rounded-xl shadow-lg w-64 sm:w-40 md:w-48 lg:w-52 h-52 flex flex-col items-center justify-center text-center hover:scale-105 transform transition-all duration-200 cursor-pointer";
+    "bg-zinc-900 py-8 px-6 rounded-xl shadow-lg w-64 sm:w-46 md:w-48 lg:w-52 h-52 flex flex-col items-center justify-center text-center hover:scale-110 transform transition-all duration-200 cursor-pointer";
 
   const projectCard =
-    "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200";
+    "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-110 transition-transform duration-200";
 
   return (
     <div className="min-h-screen bg-black">
@@ -71,11 +93,11 @@ export default function Home() {
       </section>
 
       <section className="my-15">
-        <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 text-center">
+        <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
           Sobre Mim
         </h2>
 
-        <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-10 md:px-12 lg:px-15 space-y-4 text-justify text-base sm:text-lg lg:text-xl">
+        <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-4 text-justify text-base sm:text-lg lg:text-xl">
           <p>
             Tenho 18 anos e sou desenvolvedor web com foco em front-end,
             apaixonado por tecnologia e design de interfaces.
@@ -101,11 +123,11 @@ export default function Home() {
       </section>
 
       <section className="py-7">
-        <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 text-center">
+        <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
           Habilidades
         </h2>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:max-w-2xl md:max-w-2xl mx-auto">
           {skills.map(({ Icon, title, id, color }) => (
             <div
               key={id}
@@ -124,29 +146,51 @@ export default function Home() {
             </div>
           ))}
         </div>
+
         {openSkill && (
           <>
             <div
               className="fixed inset-0 bg-black/65 z-50"
               onClick={() => setOpenSkill(null)}
             ></div>
-
-            <div className="fixed top-1/2 left-1/2 w-75 p-6 bg-zinc-900 rounded-xl shadow-xl z-60 transform -translate-x-1/2 -translate-y-1/2 text-center text-white sm:w-11/12 sm:max-w-md
-            lg:max-w-2xl">
-              <button
-                onClick={() => setOpenSkill(null)}
-                className="text-white text-3xl mb-4 float-right hover:text-zinc-300"
-                aria-label="Fechar modal"
-              >
-                <FiX />
-              </button>
+            <div className="fixed top-1/2 left-1/2 w-75 p-6 bg-zinc-900 rounded-xl shadow-xl z-60 transform -translate-x-1/2 -translate-y-1/2 text-white sm:w-11/12 sm:max-w-md lg:max-w-2xl">
+            
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setOpenSkill(null)}
+                  className="text-white text-3xl hover:text-zinc-300"
+                  aria-label="Fechar modal"
+                >
+                  <FiX />
+                </button>
+              </div>
 
               {skills
                 .filter((skill) => skill.id === openSkill)
-                .map(({ title, description }) => (
-                  <div key={title}>
-                    <h3 className="text-2xl font-raleway-bold mb-4">{title}</h3>
-                    <p className="font-outfit text-base">{description}</p>
+                .map(({ Icon, title, description, experience, color }) => (
+                  <div
+                    key={title}
+                    className="space-y-4 flex flex-col items-center text-center"
+                  >
+                 
+                    <Icon className={`w-20 h-24 lg:w-25 lg:h-28 ${color}`} />
+
+                  
+                    <h3 className="text-2xl font-raleway-bold mb-2 text-white">
+                      {title}
+                    </h3>
+
+                 
+                    <div className="text-left max-w-xl w-full space-y-3">
+                      <h4 className={`font-outfit text-base ${color}`}>
+                        Experiência:{" "}
+                        <strong className="font-semibold">{experience}</strong>
+                      </h4>
+
+                      <p className="font-outfit text-base text-zinc-200">
+                        {description}
+                      </p>
+                    </div>
                   </div>
                 ))}
             </div>
@@ -155,7 +199,7 @@ export default function Home() {
       </section>
 
       <section className="py-7">
-        <h2 className="font-raleway-bold text-blue-600 text-xl sm:text-2xl lg:text-3xl pb-8 mt-19 text-center">
+        <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 mt-19 text-center">
           Projetos
         </h2>
 
@@ -222,8 +266,6 @@ export default function Home() {
       </section>
 
       <Footer />
-
-      {/* Modal / Menu centralizado que abre ao clicar numa habilidade */}
     </div>
   );
 }

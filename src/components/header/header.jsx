@@ -14,16 +14,25 @@ export default function Header() {
 
         <div
           className="flex justify-center 
-        gap-2 sm:gap-5 sm:px-10 "
+        gap-3 sm:gap-5 sm:px-10 "
         >
-          <button
-            className=" text-blue-800  hover:text-blue-600 active:scale-85
-          text-xl sm:text-2xl md:text-3xl lg:text-4xl "
-          >
-            <a href="https://www.linkedin.com/in/jo%C3%A3o-luis-75b18a333/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+          <button className=" text-blue-800  hover:text-blue-600 active:scale-85 text-3xl lg:text-4xl z-50 ">
+            <a
+              href="https://www.linkedin.com/in/jo%C3%A3o-luis-75b18a333/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
           </button>
-          <button className=" text-blue-800  hover:text-blue-600 active:scale-85 text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
-            <a href="https://github.com/JohnLouisMaker" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+          <button className=" text-blue-800  hover:text-blue-600 active:scale-85 text-3xl  lg:text-4xl z-50 ">
+            <a
+              href="https://github.com/JohnLouisMaker"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
           </button>
         </div>
       </div>
