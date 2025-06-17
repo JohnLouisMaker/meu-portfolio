@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaHtml5, FaCss3Alt, FaJava, FaReact } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
@@ -20,8 +21,39 @@ export default function Home() {
       Icon: FaHtml5,
       title: "HTML5",
       experience: "Intermediário a Avançado",
-      description:
-        "Tenho domínio sobre a estrutura básica do HTML5, incluindo elementos semânticos como <header>, <main>, <section>, <article> e <footer>. Também sei trabalhar com formulários usando <form>, <input>, <textarea>, <label> e <button>. Entendo bem a hierarquia de tags, uso correto de <div>, <span>, listas (<ul>, <ol>, <li>) e links (<a>). Ainda estou em processo de aprendizado de estruturas como tabelas (<table>, <tr>, <td>), mas me viro bem para montar páginas responsivas e acessíveis com boa organização semântica.",
+      description: `
+Tenho domínio sobre a estrutura básica do HTML5 e uso frequente de elementos semânticos para criar páginas bem estruturadas e acessíveis.
+
+Tags Semânticas:
+- <header>
+- <main>
+- <section>
+- <article>
+- <footer>
+
+Formulários:
+- <form>
+- <input>
+- <textarea>
+- <label>
+- <button>
+
+Estrutura e Organização:
+- <div>
+- <span>
+
+Listas:
+- <ul>
+- <ol>
+- <li>
+
+Links e Mídia:
+- <a>
+- <img>
+- <video>
+- <audio>
+
+`,
       color: "text-orange-400",
     },
     {
@@ -76,6 +108,18 @@ export default function Home() {
 
   const projectCard =
     "bg-zinc-900 py-6 px-4 rounded-xl shadow-lg w-72 sm:w-80 md:w-96 flex flex-col items-center text-center hover:scale-110 transition-transform duration-200";
+
+  useEffect(() => {
+    if (openSkill !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openSkill]);
 
   return (
     <div className="min-h-screen bg-black">
@@ -149,12 +193,14 @@ export default function Home() {
 
         {openSkill && (
           <>
+            {/* Fundo escuro que fecha o modal */}
             <div
               className="fixed inset-0 bg-black/65 z-50"
               onClick={() => setOpenSkill(null)}
             ></div>
-            <div className="fixed top-1/2 left-1/2 w-75 p-6 bg-zinc-900 rounded-xl shadow-xl z-60 transform -translate-x-1/2 -translate-y-1/2 text-white sm:w-11/12 sm:max-w-md lg:max-w-2xl">
-            
+
+            {/* Modal com rolagem interna personalizada */}
+            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-60 bg-zinc-900 p-6 rounded-xl shadow-xl text-white sm:w-11/12 sm:max-w-md lg:max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
               <div className="flex justify-end">
                 <button
                   onClick={() => setOpenSkill(null)}
@@ -172,24 +218,21 @@ export default function Home() {
                     key={title}
                     className="space-y-4 flex flex-col items-center text-center"
                   >
-                 
                     <Icon className={`w-20 h-24 lg:w-25 lg:h-28 ${color}`} />
 
-                  
                     <h3 className="text-2xl font-raleway-bold mb-2 text-white">
                       {title}
                     </h3>
 
-                 
                     <div className="text-left max-w-xl w-full space-y-3">
                       <h4 className={`font-outfit text-base ${color}`}>
                         Experiência:{" "}
                         <strong className="font-semibold">{experience}</strong>
                       </h4>
 
-                      <p className="font-outfit text-base text-zinc-200">
+                      <pre className="font-outfit text-base text-zinc-200 whitespace-pre-wrap">
                         {description}
-                      </p>
+                      </pre>
                     </div>
                   </div>
                 ))}
