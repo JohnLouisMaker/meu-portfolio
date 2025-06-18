@@ -5,12 +5,15 @@ import { FaHtml5, FaCss3Alt, FaJava, FaReact } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { FiX } from "react-icons/fi";
 
-import mySelf from "../assets/Myself.png";
-import TaskZenBanner from "../assets/taskzen.png";
-import PDFSimples from "../assets/pdf-site.png";
+import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
+import mySelf from "../../assets/Myself.png";
+import TaskZenBanner from "../../assets/taskzen.png";
+import PDFSimples from "../../assets/pdf-site.png";
+
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
 
 export default function Home() {
   const [openSkill, setOpenSkill] = useState(null);
@@ -100,6 +103,25 @@ Links e Mídia:
       description:
         "MySQL é um banco de dados relacional muito usado para armazenar informações organizadas.",
       color: "text-blue-500",
+    },
+  ];
+
+  const projects = [
+    {
+      id: "taskzen",
+      img: TaskZenBanner,
+      title: "TaskZen",
+      description:
+        "Uma ToDo List com sistema de login e criação de conta, feita com React e JSON Server.",
+      navigate: "/taskZen", // <- troca isso
+    },
+    {
+      id: "pdfsimples",
+      img: PDFSimples,
+      title: "PDF Simples",
+      description:
+        "Um gerador de PDF simples, feito com React e uma API para conversão de HTML em PDF.",
+      navigate: "/pdfSimples", // <- troca isso também
     },
   ];
 
@@ -247,64 +269,23 @@ Links e Mídia:
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
-          <div className={projectCard}>
-            <img
-              src={TaskZenBanner}
-              alt="Projeto TaskZen"
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
-            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
-              TaskZen
-            </h3>
-            <p className="font-outfit text-gray-300 text-sm">
-              Uma ToDo List com sistema de login e criação de conta, feita com
-              React e JSON Server.
-            </p>
-          </div>
-
-          <div className={projectCard}>
-            <img
-              src={PDFSimples}
-              alt="Projeto PDF-Simples!"
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
-            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
-              PDF-Simples!
-            </h3>
-            <p className="font-outfit text-gray-300 text-sm">
-              Um site simples para converter alguns arquivos em PDF de forma
-              rápida e prática.
-            </p>
-          </div>
-
-          <div className={projectCard}>
-            <img
-              src={mySelf}
-              alt="Projeto Quiz"
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
-            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
-              Projeto 3
-            </h3>
-            <p className="font-outfit text-gray-300 text-sm">
-              Quiz interativo em Java sobre temas sociais e cidadania.
-            </p>
-          </div>
-
-          <div className={projectCard}>
-            <img
-              src={mySelf}
-              alt="Projeto Portfolio"
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
-            <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
-              Projeto 4
-            </h3>
-            <p className="font-outfit text-gray-300 text-sm">
-              Portfolio pessoal com React Router, estilização moderna e
-              responsiva.
-            </p>
-          </div>
+          {projects.map(({ id, title, description, img, navigate }) => (
+            <Link to={navigate} key={id}>
+              <div className={projectCard}>
+                <img
+                  src={img}
+                  alt={`Projeto ${title}`}
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
+                  {title}
+                </h3>
+                <p className="font-outfit text-gray-300 text-sm">
+                  {description}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
