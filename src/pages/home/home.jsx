@@ -6,7 +6,6 @@ import { SiMysql } from "react-icons/si";
 import { FiX } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 import mySelf from "../../assets/Myself.png";
 import TaskZenBanner from "../../assets/taskzen.png";

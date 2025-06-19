@@ -15,7 +15,7 @@ export default function TaskZen() {
         <img
           src={TaskZenBanner}
           alt="Banner do Projeto TaskZen"
-          className="mx-auto w-[90vw] max-w-2xl rounded-lg shadow-lg mb-12"
+          className="mx-auto w-[90vw] max-w-2xl rounded-lg shadow-lg mb-12 animate-slide-up"
         />
       </section>
 
