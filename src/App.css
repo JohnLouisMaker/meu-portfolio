@@ -38,7 +38,7 @@
   animation: slide-up 0.7s ease-out forwards;
 }
 
-/* Pode ser em styles/global.css */
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
@@ -57,4 +57,8 @@
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #4a4a4a #1f1f1f;
+}
+
+.no-header-margin {
+  margin-bottom: 4em !important;
 }
