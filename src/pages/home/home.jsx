@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import mySelf from "../../assets/Myself.png";
 import TaskZenBanner from "../../assets/taskzen.png";
 import PDFSimples from "../../assets/pdf-site.png";
+import JavaProject from "../../assets/java-project.png";
 
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
@@ -115,12 +116,12 @@ Links e Mídia:
       navigate: "/taskZen", // <- troca isso
     },
     {
-      id: "pdfsimples",
-      img: PDFSimples,
-      title: "PDF Simples",
+      id: "menuLP",
+      img: JavaProject,
+      title: "Menu Interativo Em Java",
       description:
-        "Um gerador de PDF simples, feito com React e uma API para conversão de HTML em PDF.",
-      navigate: "/pdfSimples", // <- troca isso também
+        "Este portfólio que você está vendo, feito com React e Tailwind CSS.",
+      navigate: "/menuLP", // <- e isso
     },
   ];
 

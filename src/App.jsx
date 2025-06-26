@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/home";
 import TaskZen from "./pages/taskZen/tasZen";
+import MenuLP from "./pages/menuLP/menuLP";
 
 import ScrollToTop from "./components/scroll/scroll";
 
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/taskZen" element={<TaskZen />} />
+          <Route path="/menuLP" element={<MenuLP />} />
         </Routes>
       </BrowserRouter>
     </div>

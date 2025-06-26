@@ -17,6 +17,27 @@ export default function TaskZen() {
           alt="Banner do Projeto TaskZen"
           className="mx-auto w-[90vw] max-w-2xl rounded-lg shadow-lg mb-12 animate-slide-up"
         />
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
+          <a
+            href="https://task-zen-final.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:from-blue-600 hover:to-blue-800 text-white font-raleway-bold px-8 py-3 lg:text-xl rounded-lg shadow-md transition duration-200">
+              Ver Projeto Com Vercel
+            </button>
+          </a>
+
+          <a
+            href="https://github.com/JohnLouisMaker/task-zen-final"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-500 hover:to-gray-700 text-white font-raleway-bold lg:text-xl px-8 py-3 rounded-lg shadow-md transition duration-200">
+              Ver Código No GitHub
+            </button>
+          </a>
+        </div>
       </section>
 
       <section className="my-15">
