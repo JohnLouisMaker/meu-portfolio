@@ -21,7 +21,6 @@ export default function Home() {
   const [openModalId, setOpenModalId] = useState(null);
   const [modalType, setModalType] = useState(null);
 
-
   useEffect(() => {
     if (openModalId) {
       document.body.style.overflow = "hidden";
@@ -287,7 +286,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
         {cursando && (
           <div className="px-4  rounded-lg shadow-inner">
             <h4 className="text-green-400 text-base sm:text-lg md:text-xl font-outfit italic tracking-wide">
-             Cursando
+              Cursando
             </h4>
           </div>
         )}
@@ -334,7 +333,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
           <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
             Sobre Mim
           </h2>
-          <div className="font-outfit text-white max-w-3xl mx-auto px-12 space-y-4 text-justify text-base sm:text-lg lg:text-xl">
+          <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-4 text-left sm:text-justify text-base sm:text-lg lg:text-xl">
             <p>
               Tenho 18 anos e sou desenvolvedor web com foco em front-end,
               apaixonado por tecnologia e design de interfaces.
