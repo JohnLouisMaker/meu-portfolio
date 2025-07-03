@@ -1,25 +1,24 @@
-import Header from "../../components/header/header";
+import CinezaBanner from "../../assets/cineza.png";
 import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 
-import TaskZenBanner from "../../assets/taskzen.png";
-
-export default function TaskZen() {
+export default function Cineza() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header className="no-header-margin" />
 
       <section className="text-center mt-0 pt-6">
         <h1 className="relative z-10 font-raleway-bold text-white text-3xl sm:text-5xl md:text-5xl lg:text-7xl mb-8 mt-0">
-          TaskZen
+          Cineza
         </h1>
         <img
-          src={TaskZenBanner}
-          alt="Banner do Projeto TaskZen"
+          src={CinezaBanner}
+          alt="Banner do Projeto Cineza"
           className="mx-auto w-[90vw] max-w-2xl rounded-lg shadow-lg mb-12 animate-slide-up"
         />
         <div className="flex flex-wrap justify-center gap-4 mt-4">
           <a
-            href="https://task-zen-final.vercel.app"
+            href="https://cineza-beta.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -28,7 +27,7 @@ export default function TaskZen() {
             </button>
           </a>
           <a
-            href="https://github.com/JohnLouisMaker/task-zen-final"
+            href="https://github.com/JohnLouisMaker/cineza"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -41,31 +40,32 @@ export default function TaskZen() {
 
       <section className="my-15">
         <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
-          Sobre o TaskZen
+          Sobre o Cineza
         </h2>
         <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-4 text-left sm:text-justify text-base sm:text-lg lg:text-xl">
           <p>
-            O TaskZen é uma aplicação web moderna e minimalista para
-            gerenciamento de tarefas, desenvolvida com foco na simplicidade e
-            experiência do usuário. Combinando design elegante com
-            funcionalidade intuitiva, oferece uma abordagem zen para organizar
-            seu dia a dia.
+            Cineza é uma plataforma web para descoberta de filmes, construída
+            com React, Tailwind CSS e Vite. Utiliza a API do TMDb para exibir os
+            filmes mais populares, bem avaliados e lançamentos recentes com uma
+            interface elegante e responsiva.
           </p>
         </div>
       </section>
 
       <section className="my-15">
         <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
-          Por que TaskZen?
+          Por que Cineza?
         </h2>
         <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-4 text-left sm:text-justify text-base sm:text-lg lg:text-xl">
           <ul className="list-disc list-inside space-y-2">
-            <li>Interface Zen: Design limpo e relaxante</li>
-            <li>Gradientes Dinâmicos: Visual fluido e moderno</li>
-            <li>Totalmente Responsivo: Funciona em qualquer dispositivo</li>
-            <li>Performance Otimizada: Carregamento rápido com Vite</li>
-            <li>Sistema de Autenticação: Login e cadastro</li>
-            <li>Recuperação de Senha: Sistema via EmailJS</li>
+            <li>Descubra filmes populares, lançamentos e mais</li>
+            <li>
+              Design inspirado em cinemas modernos com destaques em azul cósmico
+            </li>
+            <li>Experiência responsiva em todos os dispositivos</li>
+            <li>Busca inteligente com sugestões em tempo real</li>
+            <li>Integração com a API oficial do TMDb</li>
+            <li>Carregamento otimizado com Vite</li>
           </ul>
         </div>
       </section>
@@ -77,46 +77,29 @@ export default function TaskZen() {
         <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-6 text-left sm:text-justify text-base sm:text-lg lg:text-xl">
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              🏠 Página Inicial
+              🎭 Interface Cinematográfica
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Landing page atrativa com depoimentos</li>
-              <li>Navegação intuitiva</li>
+              <li>Design moderno com paleta escura e destaques em azul</li>
+              <li>Tipografia personalizada e animações suaves</li>
             </ul>
           </div>
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              👤 Autenticação Completa
+              🔍 Busca Inteligente
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Cadastro de usuários</li>
-              <li>Login de usuários</li>
-              <li>Recuperação de senha via email</li>
-              <li>Validação de dados em tempo real</li>
+              <li>Resultados em tempo real com sugestões dinâmicas</li>
+              <li>Pesquisa por título ou gênero</li>
             </ul>
           </div>
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              📝 Gerenciamento de Tarefas
+              📱 Responsividade
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Criar tarefas com título e descrição</li>
-              <li>Marcar como concluída/pendente</li>
-              <li>Interface drag-friendly</li>
-              <li>Persistência automática no localStorage</li>
-              <li>Feedback visual para tarefas concluídas</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              🎨 Design & UX
-            </h3>
-            <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Gradientes animados</li>
-              <li>Backdrop blur effects</li>
-              <li>Transições suaves</li>
-              <li>Typography personalizada (Unageo)</li>
-              <li>Scrollbar customizada</li>
+              <li>Compatível com desktop, tablets e smartphones</li>
+              <li>Menu hamburger e layout adaptativo</li>
             </ul>
           </div>
         </div>
@@ -142,21 +125,13 @@ export default function TaskZen() {
               <tr>
                 <td className="px-4 py-3 border-b border-zinc-700">React</td>
                 <td className="px-4 py-3 border-b border-zinc-700">
-                  Framework principal
+                  Framework principal da interface
                 </td>
               </tr>
               <tr>
                 <td className="px-4 py-3 border-b border-zinc-700">Vite</td>
                 <td className="px-4 py-3 border-b border-zinc-700">
-                  Build tool e dev server
-                </td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 border-b border-zinc-700">
-                  React Router
-                </td>
-                <td className="px-4 py-3 border-b border-zinc-700">
-                  Roteamento SPA
+                  Build tool e servidor de desenvolvimento
                 </td>
               </tr>
               <tr>
@@ -164,22 +139,20 @@ export default function TaskZen() {
                   Tailwind CSS
                 </td>
                 <td className="px-4 py-3 border-b border-zinc-700">
-                  Styling e responsividade
+                  Estilização e responsividade
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 border-b border-zinc-700">EmailJS</td>
+                <td className="px-4 py-3 border-b border-zinc-700">Axios</td>
                 <td className="px-4 py-3 border-b border-zinc-700">
-                  Envio de emails
+                  Cliente HTTP para chamadas à API
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3">JSONBin.io</td>
-                <td className="px-4 py-3">Armazenamento de usuários</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">React Icons</td>
-                <td className="px-4 py-3">Ícones</td>
+                <td className="px-4 py-3">TMDb API</td>
+                <td className="px-4 py-3">
+                  Fonte de dados sobre filmes e séries
+                </td>
               </tr>
             </tbody>
           </table>

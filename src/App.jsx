@@ -2,7 +2,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/home";
 import TaskZen from "./pages/taskZen/tasZen";
-import MenuLP from "./pages/menuLP/menuLP";
+import Eots from "./pages/eots/eots";
+import Cineza from "./pages/cineza/cineza";
 
 import ScrollToTop from "./components/scroll/scroll";
 
@@ -14,7 +15,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/taskZen" element={<TaskZen />} />
-          <Route path="/menuLP" element={<MenuLP />} />
+          <Route path="/eye-on-the-sky" element={<Eots />} />
+          <Route path="/cineza" element={<Cineza />} />
         </Routes>
       </BrowserRouter>
     </div>
