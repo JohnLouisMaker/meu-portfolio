@@ -1,33 +1,60 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import prettierPlugin from "eslint-plugin-prettier";
+import eslintConfigPrettier from "eslint-config-prettier";
+
+const customRules = {
+  "no-console": "warn",
+  "no-debugger": "warn",
+  radix: ["warn", "always"],
+  "class-methods-use-this": "off",
+  "no-param-reassign": "off",
+  camelcase: "off",
+  "prettier/prettier": "error",
+};
 
 export default [
-  { ignores: ['dist'] },
+  eslintConfigPrettier,
+
   {
-    files: ['**/*.{js,jsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
+      ecmaVersion: 2022,
+      sourceType: "module",
+      globals: {
+        node: true,
+        browser: false,
+        process: "readonly",
+        console: "readonly",
+        module: "readonly",
+        require: "readonly",
+        __filename: "readonly",
+        __dirname: "readonly",
       },
     },
-    plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
     rules: {
-      ...js.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      ...customRules,
     },
   },
-]
+
+  {
+    plugins: {
+      prettier: prettierPlugin,
+      react,
+      "react-hooks": reactHooks,
+    },
+    extends: [
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:prettier/recommended",
+    ],
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+    rules: {
+      ...prettierPlugin.configs.recommended.rules,
+
+    },
+  },
+];

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaHtml5, FaCss3Alt, FaJava, FaReact } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJava, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -10,12 +10,13 @@ import TaskZenBanner from "../../assets/taskzen.png";
 import EyeOnTheSky from "../../assets/eots.png";
 import CinezaBanner from "../../assets/cineza.png";
 import unifametroBanner from "../../assets/unifametro.png";
+import gtech from "../../assets/gtech.png";
 import cev from "../../assets/cev.png";
 import certificadocev from "../../assets/certificado-cev.png";
 
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import { h4 } from "motion/react-client";
+import { col, h4 } from "motion/react-client";
 
 export default function Home() {
   const [openModalId, setOpenModalId] = useState(null);
@@ -173,6 +174,21 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
       `,
       color: "text-blue-500",
     },
+   {
+  id: "nodejs",
+  Icon: FaNodeJs,
+  title: "Node.js",
+  experience: "Básico",
+  description: `
+Tenho noções iniciais de desenvolvimento com Node.js. Já trabalhei com projetos simples usando o framework Express para configurar rotas HTTP e estruturar APIs REST.
+
+Sei organizar arquivos separando responsabilidades em pastas como models, routes e controllers. Tenho familiaridade com o ORM Sequelize, conseguindo definir models, criar migrations e conectar com um banco PostgreSQL.
+
+Entendo conceitos básicos de HTTP como verbos (GET, POST, PUT, DELETE), códigos de status e requisições assíncronas com async/await.
+
+Ainda estou aprendendo sobre middlewares, tratamento de erros e boas práticas de arquitetura, mas já consigo montar um backend funcional e persistir dados de forma simples.`,
+  color: "text-green-500",
+},
   ];
 
   const projects = [
@@ -202,6 +218,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
   const formation = [
     {
       id: "unifametro",
+      colorBanner: "bg-green-700",
       img: unifametroBanner,
       title: "Unifametro",
       area: "ADS - Análise E Desenvolvimento de Sistemas",
@@ -209,8 +226,21 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
       cursando: true,
       certificado: null,
     },
+
+    {
+      id: "Geração Tech",
+      colorBanner: "bg-white",
+      img: gtech,
+      title: "Projeto Geração Tech - IEL Ceará",
+      area: "Desenvolvedor Web Full Stack - Online - 2.0",
+      periodo: "ABR 2025 - JUL 2025",
+      cursando: false,
+      certificado: null,
+    },
+
     {
       id: "curso-em-video",
+      colorBanner: "bg-blue-600",
       img: cev,
       title: "Curso em Vídeo",
       area: "CURSO HTML5 E CSS3: MÓDULO 1 DE 5 [40 HORAS]",
@@ -255,7 +285,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
     const formationItem = formation.find((f) => f.id === openModalId);
     if (!formationItem) return null;
 
-    const { img, title, area, periodo, cursando, certificado } = formationItem;
+    const { id, img, colorBanner, title, area, periodo, cursando, certificado } = formationItem;
 
     return (
       <div className="custom-scrollbar space-y-6 flex flex-col items-center text-center overflow-y-auto max-h-[65vh] px-4 sm:px-6 md:px-8 lg:px-12">
@@ -263,26 +293,21 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
           <img
             src={img}
             alt={title}
-            className="
-              bg-green-700 rounded-xl w-full 
-              max-w-[220px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] 
-              h-auto
-              shadow-md
-            "
+            className={
+              id === "Geração Tech"
+                ? `${colorBanner} rounded-xl w-full max-w-[220px] sm:max-w-[300px] md:max-w-[280px] lg:max-w-[320px] h-auto p-10 shadow-md`
+                : `${colorBanner} rounded-xl w-full max-w-[220px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] h-auto shadow-md`
+            }
           />
         )}
 
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-raleway-bold mb-2">
-          {title}
-        </h3>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-raleway-bold mb-2">{title}</h3>
 
         <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-[320px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[480px] mb-1">
           {area}
         </p>
 
-        <p className="text-zinc-400 italic text-xs sm:text-sm md:text-base mb-1">
-          {periodo}
-        </p>
+        <p className="text-zinc-400 italic text-xs sm:text-sm md:text-base mb-1">{periodo}</p>
         {cursando && (
           <div className="px-4  rounded-lg shadow-inner">
             <h4 className="text-green-400 text-base sm:text-lg md:text-xl font-outfit italic tracking-wide">
@@ -335,23 +360,16 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
           </h2>
           <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-4 text-left sm:text-justify text-base sm:text-lg lg:text-xl">
             <p>
-              Tenho 18 anos e sou desenvolvedor web com foco em front-end,
-              apaixonado por tecnologia e design de interfaces.
+              Tenho 18 anos e sou desenvolvedor web com foco em front-end, apaixonado por tecnologia
+              e design de interfaces.
             </p>
             <p>
-              Atualmente curso Análise e Desenvolvimento de Sistemas na
-              Unifametro. Já participei da Geração Tech Web.
+              Atualmente curso Análise e Desenvolvimento de Sistemas na Unifametro. Já participei da
+              Geração Tech Web.
             </p>
-            <p>
-              Busco oportunidades que me desafiem e permitam crescer na área.
-            </p>
-            <p>
-              Sou movido a café, boas ideias e vontade de fazer a diferença com
-              código.
-            </p>
-            <p className="italic text-center">
-              Hobbies: boa música, automobilismo e games.
-            </p>
+            <p>Busco oportunidades que me desafiem e permitam crescer na área.</p>
+            <p>Sou movido a café, boas ideias e vontade de fazer a diferença com código.</p>
+            <p className="italic text-center">Hobbies: boa música, automobilismo e games.</p>
           </div>
         </section>
 
@@ -379,9 +397,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
                 }}
               >
                 <Icon className={`w-20 h-24 mb-4 ${color}`} />
-                <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
-                  {title}
-                </h3>
+                <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">{title}</h3>
               </div>
             ))}
           </div>
@@ -404,9 +420,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
                   <h3 className="font-raleway-bold text-white text-xl font-semibold mb-2">
                     {title}
                   </h3>
-                  <p className="font-outfit text-gray-300 text-sm">
-                    {description}
-                  </p>
+                  <p className="font-outfit text-gray-300 text-sm">{description}</p>
                 </div>
               </Link>
             ))}
@@ -419,7 +433,7 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
             Formação
           </h2>
           <div className="flex flex-wrap justify-center gap-4 mx-auto">
-            {formation.map(({ title, id, img }) => (
+            {formation.map(({ colorBanner, title, id, img }) => (
               <div
                 key={id}
                 className={formationCard}
@@ -440,12 +454,15 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
                   <img
                     src={img}
                     alt={title}
-                    className="bg-green-700 w-full h-auto object-cover rounded-md mb-4"
+                    className={`${
+                      id === "Geração Tech"
+                        ? `${colorBanner} w-auto h-80 object-cover rounded-md mb-4 pt-25 pr-5 pl-5 pb-[90px]`
+                        : colorBanner
+                    } h-auto object-cover rounded-md mb-4`}
                   />
                 )}
-                <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">
-                  {title}
-                </h3>
+
+                <h3 className="text-lg lg:text-2xl text-white font-raleway-bold">{title}</h3>
               </div>
             ))}
           </div>
