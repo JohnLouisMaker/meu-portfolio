@@ -16,7 +16,6 @@ import certificadocev from "../../assets/certificado-cev.png";
 import certificadogt from "../../assets/certificado-gt.jpg";
 import formatura1 from "../../assets/formatura-1.jpg";
 import formatura2 from "../../assets/formatura-2.jpg";
-import formatura3 from "../../assets/formatura-3.jpg";
 
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
