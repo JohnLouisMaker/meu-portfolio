@@ -13,10 +13,13 @@ import unifametroBanner from "../../assets/unifametro.png";
 import gtech from "../../assets/gtech.png";
 import cev from "../../assets/cev.png";
 import certificadocev from "../../assets/certificado-cev.png";
+import certificadogt from "../../assets/certificado-gt.jpg";
+import formatura1 from "../../assets/formatura-1.jpg";
+import formatura2 from "../../assets/formatura-2.jpg";
+import formatura3 from "../../assets/formatura-3.jpg";
 
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import { col, h4 } from "motion/react-client";
 
 export default function Home() {
   const [openModalId, setOpenModalId] = useState(null);
@@ -174,12 +177,12 @@ Sei copiar e puxar informações entre tabelas, garantindo consultas eficientes 
       `,
       color: "text-blue-500",
     },
-   {
-  id: "nodejs",
-  Icon: FaNodeJs,
-  title: "Node.js",
-  experience: "Básico",
-  description: `
+    {
+      id: "nodejs",
+      Icon: FaNodeJs,
+      title: "Node.js",
+      experience: "Básico",
+      description: `
 Tenho noções iniciais de desenvolvimento com Node.js. Já trabalhei com projetos simples usando o framework Express para configurar rotas HTTP e estruturar APIs REST.
 
 Sei organizar arquivos separando responsabilidades em pastas como models, routes e controllers. Tenho familiaridade com o ORM Sequelize, conseguindo definir models, criar migrations e conectar com um banco PostgreSQL.
@@ -187,8 +190,8 @@ Sei organizar arquivos separando responsabilidades em pastas como models, routes
 Entendo conceitos básicos de HTTP como verbos (GET, POST, PUT, DELETE), códigos de status e requisições assíncronas com async/await.
 
 Ainda estou aprendendo sobre middlewares, tratamento de erros e boas práticas de arquitetura, mas já consigo montar um backend funcional e persistir dados de forma simples.`,
-  color: "text-green-500",
-},
+      color: "text-green-500",
+    },
   ];
 
   const projects = [
@@ -233,9 +236,13 @@ Ainda estou aprendendo sobre middlewares, tratamento de erros e boas práticas d
       img: gtech,
       title: "Projeto Geração Tech - IEL Ceará",
       area: "Desenvolvedor Web Full Stack - Online - 2.0",
-      periodo: "ABR 2025 - JUL 2025",
+      periodo: `
+ABR 2025 - JUL 2025
+Formatura 6 De Agosto De 2025
+`,
       cursando: false,
-      certificado: null,
+      certificado: certificadogt,
+      fotos: [formatura1, formatura2],
     },
 
     {
@@ -285,7 +292,8 @@ Ainda estou aprendendo sobre middlewares, tratamento de erros e boas práticas d
     const formationItem = formation.find((f) => f.id === openModalId);
     if (!formationItem) return null;
 
-    const { id, img, colorBanner, title, area, periodo, cursando, certificado } = formationItem;
+    const { id, img, colorBanner, title, area, periodo, cursando, certificado, fotos } =
+      formationItem;
 
     return (
       <div className="custom-scrollbar space-y-6 flex flex-col items-center text-center overflow-y-auto max-h-[65vh] px-4 sm:px-6 md:px-8 lg:px-12">
@@ -307,7 +315,7 @@ Ainda estou aprendendo sobre middlewares, tratamento de erros e boas práticas d
           {area}
         </p>
 
-        <p className="text-zinc-400 italic text-xs sm:text-sm md:text-base mb-1">{periodo}</p>
+        <p className="text-zinc-400 italic text-xs sm:text-sm md:text-base mb-1 whitespace-pre-line ">{periodo}</p>
         {cursando && (
           <div className="px-4  rounded-lg shadow-inner">
             <h4 className="text-green-400 text-base sm:text-lg md:text-xl font-outfit italic tracking-wide">
@@ -330,6 +338,25 @@ Ainda estou aprendendo sobre middlewares, tratamento de erros e boas práticas d
                 h-auto shadow-lg
               "
             />
+          </div>
+        )}
+        {formationItem.fotos && formationItem.fotos.length > 0 && (
+          <div className="mt-6 flex flex-col items-center">
+            <h4 className="font-outfit text-base sm:text-lg md:text-xl mb-3 text-blue-400">
+              Fotos:
+            </h4>
+            {formationItem.fotos.map((fotos, index) => (
+              <img
+                key={index}
+                src={fotos}
+                alt={`Foto ${index + 1}`}
+                className="
+          rounded-xl w-full
+          max-w-[340px] sm:max-w-[360px] md:max-w-[380px] lg:max-w-[400px]
+          h-[430px] shadow-lg mb-4
+        "
+              />
+            ))}
           </div>
         )}
       </div>
