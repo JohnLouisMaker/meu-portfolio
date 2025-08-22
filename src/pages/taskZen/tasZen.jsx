@@ -1,45 +1,75 @@
+import { motion } from "framer-motion";
+
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 
 import TaskZenBanner from "../../assets/taskzen.png";
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
 export default function TaskZen() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <motion.div
+      className="min-h-screen bg-black text-white"
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+    >
       <Header className="no-header-margin" />
 
+      {/* Hero Section */}
       <section className="text-center mt-0 pt-6">
-        <h1 className="relative z-10 font-raleway-bold text-white text-3xl sm:text-5xl md:text-5xl lg:text-7xl mb-8 mt-0">
+        <motion.h1
+          className="relative z-10 font-raleway-bold text-white text-3xl sm:text-5xl md:text-5xl lg:text-7xl mb-8 mt-0"
+          variants={fadeIn}
+        >
           TaskZen
-        </h1>
-        <img
+        </motion.h1>
+        <motion.img
           src={TaskZenBanner}
           alt="Banner do Projeto TaskZen"
-          className="mx-auto w-[90vw] max-w-2xl rounded-lg shadow-lg mb-12 animate-slide-up"
+          className="mx-auto w-[90vw] max-w-2xl rounded-lg shadow-lg mb-12"
+          variants={fadeIn}
         />
         <div className="flex flex-wrap justify-center gap-4 mt-4">
-          <a
+          <motion.a
             href="https://task-zen-final.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
+            variants={fadeIn}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.1, ease: "easeInOut" }}
           >
             <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:from-blue-600 hover:to-blue-800 text-white font-raleway-bold px-8 py-3 lg:text-xl rounded-lg shadow-md transition duration-200">
               Ver Projeto Com Vercel
             </button>
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://github.com/JohnLouisMaker/task-zen-final"
             target="_blank"
             rel="noopener noreferrer"
+            variants={fadeIn}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.1, ease: "easeInOut" }}
           >
             <button className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-500 hover:to-gray-700 text-white font-raleway-bold lg:text-xl px-8 py-3 rounded-lg shadow-md transition duration-200">
               Ver Código No GitHub
             </button>
-          </a>
+          </motion.a>
         </div>
       </section>
 
-      <section className="my-15">
+      {/* About Section */}
+      <motion.section
+        className="my-15"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
           Sobre o TaskZen
         </h2>
@@ -52,9 +82,16 @@ export default function TaskZen() {
             seu dia a dia.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="my-15">
+      {/* Why TaskZen? Section */}
+      <motion.section
+        className="my-15"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
           Por que TaskZen?
         </h2>
@@ -68,16 +105,23 @@ export default function TaskZen() {
             <li>Recuperação de Senha: Sistema via EmailJS</li>
           </ul>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="my-15">
+      {/* Features Section */}
+      <motion.section
+        className="my-15"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
           Funcionalidades
         </h2>
         <div className="font-outfit text-white max-w-3xl mx-auto px-12 sm:px-16 md:px-12 lg:px-15 space-y-6 text-left sm:text-justify text-base sm:text-lg lg:text-xl">
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              🏠 Página Inicial
+              Página Inicial
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Landing page atrativa com depoimentos</li>
@@ -86,7 +130,7 @@ export default function TaskZen() {
           </div>
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              👤 Autenticação Completa
+              Autenticação Completa
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Cadastro de usuários</li>
@@ -97,7 +141,7 @@ export default function TaskZen() {
           </div>
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              📝 Gerenciamento de Tarefas
+              Gerenciamento de Tarefas
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Criar tarefas com título e descrição</li>
@@ -109,7 +153,7 @@ export default function TaskZen() {
           </div>
           <div>
             <h3 className="flex items-center gap-2 font-raleway-bold text-xl text-blue-400 mb-2">
-              🎨 Design & UX
+              Design & UX
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Gradientes animados</li>
@@ -120,9 +164,16 @@ export default function TaskZen() {
             </ul>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="my-15">
+      {/* Technologies Section */}
+      <motion.section
+        className="my-15"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h2 className="font-raleway-bold text-blue-600 text-2xl lg:text-3xl pb-8 text-center">
           Tecnologias
         </h2>
@@ -174,8 +225,12 @@ export default function TaskZen() {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3">JSONBin.io</td>
-                <td className="px-4 py-3">Armazenamento de usuários</td>
+                <td className="px-4 py-3 border-b border-zinc-700">
+                  JSONBin.io
+                </td>
+                <td className="px-4 py-3 border-b border-zinc-700">
+                  Armazenamento de usuários
+                </td>
               </tr>
               <tr>
                 <td className="px-4 py-3">React Icons</td>
@@ -184,9 +239,9 @@ export default function TaskZen() {
             </tbody>
           </table>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }

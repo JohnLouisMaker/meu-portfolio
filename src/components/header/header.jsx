@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 export default function Header({ className = "" }) {
   return (
     <>
-      <header
-        className={`mb-70 sm:mb-90 sm:flex sm:justify-between ${className}`}
-      >
+      <header className={`mb-70 sm:mb-90 sm:flex sm:justify-between ${className}`}>
         <Link to={"/"}>
-          <div className="text-center py-5 sm:flex sm:px-10 sm:gap-2 sm:text-lg md:text-xl lg:text-3xl  ">
+          <div className=" text-center py-5 sm:flex sm:px-10 sm:gap-2 sm:text-lg md:text-xl lg:text-3xl  ">
             <h1 className="font-raleway-bold  text-white">João Luis</h1>
             <h1 className="text-blue-600  z-100 font-raleway-bold">
               Desenvolvedor Web - Front-end
@@ -17,7 +15,7 @@ export default function Header({ className = "" }) {
           </div>
         </Link>
         <div
-          className="flex justify-center 
+          className=" flex justify-center
         gap-3 sm:gap-5 sm:px-10 "
         >
           <button className=" text-blue-800  hover:text-blue-600 active:scale-85 text-3xl lg:text-4xl z-50 ">
@@ -30,11 +28,7 @@ export default function Header({ className = "" }) {
             </a>
           </button>
           <button className=" text-blue-800  hover:text-blue-600 active:scale-85 text-3xl  lg:text-4xl z-50 ">
-            <a
-              href="https://github.com/JohnLouisMaker"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/JohnLouisMaker" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
           </button>

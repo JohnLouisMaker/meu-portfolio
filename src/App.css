@@ -12,7 +12,7 @@
 
 @theme{
     --font-raleway-bold: "Raleway", sans-serif;
-    --font-outfit: "Outfit", sans-serif;  
+    --font-outfit: "Outfit", sans-serif;
 }
 
 
@@ -33,9 +33,21 @@
     transform: translateY(0);
   }
 }
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .animate-slide-up {
   animation: slide-up 0.7s ease-out forwards;
+}
+
+.animate-appear {
+  animation: appear 1.5s ease-out forwards;
 }
 
 
