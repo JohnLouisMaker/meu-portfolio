@@ -2,12 +2,12 @@
 
 @font-face {
     font-family:"Raleway";
-    src: url("../assets/fonts/Raleway-Regular.ttf") format("truetype");
+    src: url("./assets/fonts/Raleway-Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Outfit";
-    src: url("fonts/Outfit-Light.ttf") format("truetype");
+    src: url("./assets/fonts/Outfit-Light.ttf") format("truetype");
 }
 
 @theme{
