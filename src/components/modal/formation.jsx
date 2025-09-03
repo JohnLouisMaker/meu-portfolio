@@ -1,5 +1,6 @@
 export default function FormationContent({ formationItem }) {
   if (!formationItem) return null;
+
   const { id, img, colorBanner, title, area, periodo, cursando, certificado, fotos } =
     formationItem;
 
@@ -16,13 +17,17 @@ export default function FormationContent({ formationItem }) {
           }
         />
       )}
+
       <h3 className="text-xl sm:text-2xl md:text-3xl font-raleway-bold mb-2">{title}</h3>
+
       <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-[480px] mb-1">
         {area}
       </p>
+
       <p className="text-zinc-400 italic text-xs sm:text-sm md:text-base mb-1 whitespace-pre-line">
         {periodo}
       </p>
+
       {cursando && (
         <div className="px-4 rounded-lg shadow-inner">
           <h4 className="text-green-400 text-base sm:text-lg md:text-xl font-outfit italic tracking-wide">
@@ -30,18 +35,32 @@ export default function FormationContent({ formationItem }) {
           </h4>
         </div>
       )}
+
       {certificado && (
         <div className="mt-6 flex flex-col items-center">
           <h4 className="font-outfit text-base sm:text-lg md:text-xl mb-3 text-blue-400">
             Certificado:
           </h4>
-          <img
-            src={certificado}
-            alt="Certificado"
-            className="rounded-xl w-full max-w-[400px] h-auto shadow-lg"
-          />
+
+          {Array.isArray(certificado) ? (
+            certificado.map((cert, idx) => (
+              <img
+                key={idx}
+                src={cert}
+                alt={`Certificado ${idx + 1}`}
+                className="rounded-xl w-full max-w-[400px] h-auto shadow-lg mb-4"
+              />
+            ))
+          ) : (
+            <img
+              src={certificado}
+              alt="Certificado"
+              className="rounded-xl w-full max-w-[400px] h-auto shadow-lg"
+            />
+          )}
         </div>
       )}
+
       {fotos && fotos.length > 0 && (
         <div className="mt-6 flex flex-col items-center">
           <h4 className="font-outfit text-base sm:text-lg md:text-xl mb-3 text-blue-400">Fotos:</h4>

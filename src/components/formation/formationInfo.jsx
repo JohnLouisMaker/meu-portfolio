@@ -2,7 +2,8 @@ import unifametroBanner from "../../assets/unifametro.png";
 import gtech from "../../assets/gtech.png";
 import cev from "../../assets/cev.png";
 import certificadocev from "../../assets/certificado-cev.png";
-import certificadogt from "../../assets/certificado-gt.jpg";
+import certificadogt from "../../assets/certificadoJL1.png";
+import certificadogt2 from "../../assets/certificadoJL2.png";
 import formatura1 from "../../assets/formatura-1.jpg";
 import formatura2 from "../../assets/formatura-2.jpg";
 
@@ -25,7 +26,7 @@ export const formation = [
     area: "Desenvolvedor Web Full Stack",
     periodo: `ABR 2025 - JUL 2025\nFormatura 6 De Agosto De 2025`,
     cursando: false,
-    certificado: certificadogt,
+    certificado: [certificadogt, certificadogt2],
     fotos: [formatura1, formatura2],
   },
   {

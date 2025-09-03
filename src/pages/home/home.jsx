@@ -9,12 +9,12 @@ import FormationContent from "../../components/modal/formation";
 
 import mySelf from "../../assets/Myself.png";
 
-import { skills } from "../../components/skill/skillInfo";
 import { projects } from "../../components/projects/projectsInfo";
 import { formation } from "../../components/formation/formationInfo";
 import SkillCard from "../../components/skill/skill";
 import ProjectCard from "../../components/projects/project";
 import FormationCard from "../../components/formation/formation";
+import skills from "../../components/skill/skillInfo";
 
 const variants = {
   fadeIn: {
