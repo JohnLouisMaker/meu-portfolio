@@ -69,7 +69,11 @@ export default function FormationContent({ formationItem }) {
               key={index}
               src={foto}
               alt={`Foto ${index + 1}`}
-              className="rounded-xl w-full max-w-[400px] h-[430px] shadow-lg mb-4"
+              className="
+    rounded-xl w-full max-w-[400px]
+    h-auto sm:max-h-[350px] md:max-h-[400px] lg:max-h-[430px]
+    shadow-lg mb-4 object-cover
+  "
             />
           ))}
         </div>
